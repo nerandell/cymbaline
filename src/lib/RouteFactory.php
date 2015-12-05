@@ -12,11 +12,13 @@ foreach (glob($pattern) as $file)
 
 $klein = new \Klein\Klein();
 
+// This is where RESTful routes are mapped by Klein
+
 foreach ($models as $model)
 {
-    $model = strtolower($model);
-    $main_url = '/' . $model;
-    $res_url =  '/' . $model . '/' . '[:name]';
+    $model_name = strtolower($model);
+    $main_url = '/' . $model_name;
+    $res_url =  '/' . $model_name . '/' . '[:name]';
 
     $klein->respond('get', $main_url, function($request){
         echo 'Getting All';
@@ -33,6 +35,15 @@ foreach ($models as $model)
     $klein->respond('delete', $res_url, function($request){
         echo 'Deleting ' . $request->name;
     });
+}
+
+// This is where custom routes are mapped by Klein.
+// User defined routes are given preference over
+// RESTful routes defined by cymbaline
+
+foreach (Route::get_routes() as $route)
+{
+    $klein->respond($route['method'], $route['path'], $route['callback']);
 }
 
 $klein->dispatch();
