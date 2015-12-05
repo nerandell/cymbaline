@@ -3,7 +3,7 @@
 class Route
 {
     private static $_routes = array();
-
+    
     static function addRoute($method, $path, $callback)
     {
         $route = array('method' => $method, 'path' => $path, 'callback' => $callback);

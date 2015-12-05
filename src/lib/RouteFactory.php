@@ -7,7 +7,9 @@ $models = array();
 foreach (glob($pattern) as $file)
 {
     $class = basename($file, '.php');
-    array_push($models, $class);
+    if ($class != 'Model'){
+        array_push($models, $class);
+    }
 }
 
 $klein = new \Klein\Klein();
@@ -20,21 +22,31 @@ foreach ($models as $model)
     $main_url = '/' . $model_name;
     $res_url =  '/' . $model_name . '/' . '[:name]';
 
-    $klein->respond('get', $main_url, function($request){
-        echo 'Getting All';
-    });
+    require_once(ROOT . DS . 'src' . DS . 'models' . DS . $model . '.php');
 
-    $klein->respond('get', $res_url, function($request){
-        echo 'Getting ' . $request->name;
-    });
+    if ($model::$get_all_enabled) {
+        $klein->respond('get', $main_url, function ($request) {
+            echo 'Getting All';
+        });
+    }
 
-    $klein->respond('post', $main_url, function($request){
-        echo 'Post called';
-    });
+    if ($model::$get_enabled){
+        $klein->respond('get', $res_url, function ($request) {
+            echo 'Getting ' . $request->name;
+        });
+    }
 
-    $klein->respond('delete', $res_url, function($request){
-        echo 'Deleting ' . $request->name;
-    });
+    if ($model::$create_enabled){
+        $klein->respond('post', $main_url, function ($request) {
+            echo 'Post called';
+        });
+    }
+
+    if ($model::$delete_enabled){
+        $klein->respond('delete', $res_url, function ($request) {
+            echo 'Deleting ' . $request->name;
+        });
+    }
 }
 
 // This is where custom routes are mapped by Klein.
