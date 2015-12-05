@@ -20,31 +20,35 @@ foreach ($models as $model)
 {
     $model_name = strtolower($model);
     $main_url = '/' . $model_name;
-    $res_url =  '/' . $model_name . '/' . '[:name]';
+    $res_url =  '/' . $model_name . '/' . '[:id]';
+    $controllerName = $model . 'Controller';
 
     require_once(ROOT . DS . 'src' . DS . 'models' . DS . $model . '.php');
+    require_once(ROOT . DS. 'src' . DS . 'controllers' . DS . $controllerName . '.php');
+
+    $controller = new $controllerName();
 
     if ($model::$get_all_enabled) {
-        $klein->respond('get', $main_url, function ($request) {
-            echo 'Getting All';
+        $klein->respond('get', $main_url, function ($request) use ($controller) {
+            $controller->getAll();
         });
     }
 
     if ($model::$get_enabled){
-        $klein->respond('get', $res_url, function ($request) {
-            echo 'Getting ' . $request->name;
+        $klein->respond('get', $res_url, function ($request) use ($controller) {
+            $controller->get($request->id);
         });
     }
 
     if ($model::$create_enabled){
-        $klein->respond('post', $main_url, function ($request) {
-            echo 'Post called';
+        $klein->respond('post', $main_url, function ($request) use ($controller) {
+            $controller->create();
         });
     }
 
     if ($model::$delete_enabled){
-        $klein->respond('delete', $res_url, function ($request) {
-            echo 'Deleting ' . $request->name;
+        $klein->respond('delete', $res_url, function ($request) use ($controller) {
+            $controller->delete($request->id);
         });
     }
 }
