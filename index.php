@@ -3,6 +3,5 @@
 define('ROOT', dirname(__FILE__));
 define('DS', DIRECTORY_SEPARATOR);
 
-$url = $_GET['url'];
-
+require(ROOT . DS. 'vendor' . DS . 'autoload.php');
 require_once(ROOT . DS . 'src' . DS . 'bootstrap.php');
