@@ -10,7 +10,7 @@ class Route
         array_push(self::$_routes, $route);
     }
 
-    static function get_routes()
+    static function getRoutes()
     {
         return self::$_routes;
     }

@@ -18,9 +18,9 @@ $klein = new \Klein\Klein();
 
 foreach ($models as $model)
 {
-    $model_name = strtolower($model);
-    $main_url = '/' . $model_name;
-    $res_url =  '/' . $model_name . '/' . '[:id]';
+    $modelName = strtolower($model);
+    $mainUrl = '/' . $modelName;
+    $resourceUrl =  '/' . $modelName . '/' . '[:id]';
     $controllerName = $model . 'Controller';
 
     require_once(ROOT . DS . 'src' . DS . 'models' . DS . $model . '.php');
@@ -29,25 +29,25 @@ foreach ($models as $model)
     $controller = new $controllerName();
 
     if ($model::$get_all_enabled) {
-        $klein->respond('get', $main_url, function ($request) use ($controller) {
+        $klein->respond('get', $mainUrl, function ($request) use ($controller) {
             $controller->getAll();
         });
     }
 
     if ($model::$get_enabled){
-        $klein->respond('get', $res_url, function ($request) use ($controller) {
+        $klein->respond('get', $resourceUrl, function ($request) use ($controller) {
             $controller->get($request->id);
         });
     }
 
     if ($model::$create_enabled){
-        $klein->respond('post', $main_url, function ($request) use ($controller) {
+        $klein->respond('post', $mainUrl, function ($request) use ($controller) {
             $controller->create();
         });
     }
 
     if ($model::$delete_enabled){
-        $klein->respond('delete', $res_url, function ($request) use ($controller) {
+        $klein->respond('delete', $resourceUrl, function ($request) use ($controller) {
             $controller->delete($request->id);
         });
     }
@@ -57,7 +57,7 @@ foreach ($models as $model)
 // User defined routes are given preference over
 // RESTful routes defined by cymbaline
 
-foreach (Route::get_routes() as $route)
+foreach (Route::getRoutes() as $route)
 {
     $klein->respond($route['method'], $route['path'], $route['callback']);
 }
