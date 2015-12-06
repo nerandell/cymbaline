@@ -1,5 +1,6 @@
 <?php
 
+
 class Controller
 {
     protected $_model;
@@ -27,16 +28,35 @@ class Controller
     {
         $result = call_user_func(array($this->_model, 'find'), $id);
         $result->delete();
+        echo $result;
     }
 
     function create($params)
     {
         $item = new $this->_model();
-        foreach($params as $key=>$model)
+        foreach($params as $key=>$value)
         {
-            $item->$key = $model;
+            $item->$key = $value;
         }
         $item->save();
+        return $item;
+    }
+
+    function update($id, $params)
+    {
+        $item = $result = call_user_func(array($this->_model, 'find'), $id);
+        $values = array();
+
+        foreach($params as $key=>$value){
+            $values[$key] = $value;
+        }
+        $item->update($values);
+    }
+
+    protected function renderView($view, $args)
+    {
+        global $twig;
+        echo $twig->render($view, $args);
     }
 
     private function _initializeModel()

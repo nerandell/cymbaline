@@ -52,6 +52,13 @@ foreach ($models as $model)
             $controller->delete($request->id);
         });
     }
+
+    if ($model::$update_enabled) {
+        $klein->respond('put', $resourceUrl, function ($request) use ($controller) {
+            $postParams = json_decode(file_get_contents('php://input'));
+            $controller->update($request->id, $postParams);
+        });
+    }
 }
 
 // This is where custom routes are mapped by Klein.
