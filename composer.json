@@ -6,5 +6,11 @@
         "klein/klein": "^2.1",
         "illuminate/database": "*",
         "twig/twig": "~1.0"
-    }
+    },
+    "authors": [
+      {
+        "name": "Ankit Chandawala",
+        "email": "ankitchandawala@gmail.com"
+      }
+    ]
 }
