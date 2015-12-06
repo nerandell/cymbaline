@@ -7,6 +7,9 @@
         "illuminate/database": "*",
         "twig/twig": "~1.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.x"
+    },
     "authors": [
       {
         "name": "Ankit Chandawala",
