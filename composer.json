@@ -1,6 +1,7 @@
 {
     "require": {
         "klein/klein": "^2.1",
-        "illuminate/database": "*"
+        "illuminate/database": "*",
+        "twig/twig": "~1.0"
     }
 }
