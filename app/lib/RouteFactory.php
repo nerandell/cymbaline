@@ -1,6 +1,6 @@
 <?php
 
-$pattern = ROOT . DS . 'src' . DS . 'models' . DS . '*.php';
+$pattern = ROOT . DS . 'app' . DS . 'models' . DS . '*.php';
 
 $models = array();
 
@@ -22,9 +22,6 @@ foreach ($models as $model)
     $mainUrl = '/' . $modelName;
     $resourceUrl =  '/' . $modelName . '/' . '[:id]';
     $controllerName = $model . 'Controller';
-
-    require_once(ROOT . DS . 'src' . DS . 'models' . DS . $model . '.php');
-    require_once(ROOT . DS. 'src' . DS . 'controllers' . DS . $controllerName . '.php');
 
     $controller = new $controllerName();
 
