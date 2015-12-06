@@ -55,7 +55,8 @@ class Controller
 
     protected function renderView($view, $args)
     {
-        global $twig;
+        $loader = new Twig_Loader_Filesystem(ROOT . DS . 'app' . DS . 'views');
+        $twig = new Twig_Environment($loader);
         echo $twig->render($view, $args);
     }
 

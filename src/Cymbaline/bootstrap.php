@@ -1,11 +1,12 @@
 <?php
 
+define('ROOT', dirname(dirname(dirname(dirname(dirname(dirname(__FILE__)))))));
+define('DS', '/');
+
 require_once('BaseModel.php');
 require_once('Controller.php');
 
 # TODO : There HAS to be a better way to do this
-define('ROOT', dirname(dirname(dirname(dirname(dirname(dirname(__FILE__)))))));
-define('DS', '/');
 
 function include_for_pattern($pattern)
 {
@@ -23,6 +24,4 @@ require_once(ROOT . DS . 'app' . DS . 'config' . DS . 'database.php');
 require_once('DatabaseHandler.php');
 require_once('Route.php');
 require_once(ROOT . DS . 'app' . DS . 'routes.php');
-require_once('LayoutFactory.php');
 require_once('RouteFactory.php');
-
