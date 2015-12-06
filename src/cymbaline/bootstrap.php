@@ -1,7 +1,7 @@
 <?php
 
-require_once(ROOT . DS . 'app' . DS . 'lib' . DS . 'BaseModel.php');
-require_once(ROOT . DS . 'app' . DS . 'lib' . DS . 'Controller.php');
+require_once('BaseModel.php');
+require_once('Controller.php');
 
 function include_for_pattern($pattern)
 {
@@ -16,9 +16,9 @@ include_for_pattern('models');
 include_for_pattern('controllers');
 
 require_once(ROOT . DS . 'app' . DS . 'config' . DS . 'database.php');
-require_once(ROOT . DS . 'app' . DS . 'lib' . DS . 'DatabaseHandler.php');
-require_once(ROOT . DS . 'app' . DS . 'lib' . DS . 'Route.php');
+require_once('DatabaseHandler.php');
+require_once('Route.php');
 require_once(ROOT . DS . 'app' . DS . 'routes.php');
-require_once(ROOT . DS . 'app' . DS . 'lib' . DS . 'LayoutFactory.php');
-require_once(ROOT . DS . 'app' . DS . 'lib' . DS . 'RouteFactory.php');
+require_once('LayoutFactory.php');
+require_once('RouteFactory.php');
 
