@@ -110,7 +110,27 @@ for more information.
 
 .. _documentation: http://laravel.com/docs/5.1/eloquent
 
-And define a controller named ``UserController`` directory like this:
+``cymbaline`` picks up your database configuration from ``config/database.php``.
+Your database file will look like this:
+
+.. code-block:: php
+
+        <?php
+        
+        $connection = [
+            'host' => 'your-host',
+            'driver'    => 'mysql',
+            'database'  => 'your-database',
+            'username'  => 'your-user',
+            'password'  => 'your-password',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => ''
+        ];
+
+
+
+Now define a controller named ``UserController`` directory like this:
 
 .. code-block:: python
 
