@@ -15,7 +15,7 @@
     ],
     "autoload": {
       "psr-4" : {
-        "Cymbaline\\" : "src/Cymbaline"
+        "Cymbaline\\" : "src/Cymbaline/"
       }
     },
     "minimum-stability": "dev"
