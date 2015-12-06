@@ -3,6 +3,10 @@
 require_once('BaseModel.php');
 require_once('Controller.php');
 
+# TODO : There HAS to be a better way to do this
+define('ROOT', dirname(dirname(dirname(dirname(dirname(dirname(__FILE__)))))));
+define('DS', '/');
+
 function include_for_pattern($pattern)
 {
     $pattern = ROOT . DS . 'app' . DS . $pattern . DS . '*.php';
