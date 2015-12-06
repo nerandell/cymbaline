@@ -13,5 +13,10 @@
         "email": "ankitchandawala@gmail.com"
       }
     ],
+    "autoload": {
+      "psr-4" : {
+        "Cymbaline\\" : "src/Cymbaline"
+      }
+    },
     "minimum-stability": "dev"
 }

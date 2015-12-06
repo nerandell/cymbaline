@@ -60,7 +60,7 @@ foreach ($models as $model)
 
 // This is where custom routes are mapped by Klein.
 // User defined routes are given preference over
-// RESTful routes defined by cymbaline
+// RESTful routes defined by Cymbaline
 
 foreach (Route::getRoutes() as $route)
 {
