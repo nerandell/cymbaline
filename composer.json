@@ -1,4 +1,7 @@
 {
+    "name": "cymbaline/cymbaline",
+    "type": "framework",
+    "description": "Yet another web service framework in PHP",
     "require": {
         "klein/klein": "^2.1",
         "illuminate/database": "*",
