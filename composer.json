@@ -12,5 +12,6 @@
         "name": "Ankit Chandawala",
         "email": "ankitchandawala@gmail.com"
       }
-    ]
+    ],
+    "minimum-stability": "dev"
 }
