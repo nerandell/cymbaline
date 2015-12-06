@@ -29,9 +29,13 @@ class Controller
         $result->delete();
     }
 
-    function create()
+    function create($params)
     {
         $item = new $this->_model();
+        foreach($params as $key=>$model)
+        {
+            $item->$key = $model;
+        }
         $item->save();
     }
 

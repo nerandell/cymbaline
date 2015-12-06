@@ -42,7 +42,8 @@ foreach ($models as $model)
 
     if ($model::$create_enabled){
         $klein->respond('post', $mainUrl, function ($request) use ($controller) {
-            $controller->create();
+            $postParams = json_decode(file_get_contents('php://input'));
+            $controller->create($postParams);
         });
     }
 
