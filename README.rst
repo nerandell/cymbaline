@@ -101,6 +101,8 @@ by ``cymbaline``
 
     <?php
     
+    use Cymbaline\BaseModel;
+    
     class User extends BaseModel
     {
     
@@ -137,6 +139,8 @@ Now define a controller named ``UserController`` directory like this:
 .. code-block:: python
 
     <?php
+    
+    use Cymbaline\Controller;
     
     class UserController extends Controller
     {
@@ -180,6 +184,8 @@ Here is a sample route added. ``cymbaline`` uses Klein for routing and the routi
 
 .. code-block:: php
 
+    use Cymbaline\Route;
+    
     Route::addRoute('get', '/hello/[:id]', function($request) {
         $controller = new UserController();
         $controller->test_custom_route($request->id);
@@ -190,6 +196,8 @@ Then add a method to the controller:
 .. code-block:: php
 
     <?php
+    
+    use Cymbaline\Controller;
     
     class UserController extends Controller
     {
