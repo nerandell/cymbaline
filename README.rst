@@ -158,7 +158,7 @@ To retrive a user:
 
 .. code-block :: bash
 
-    $ curl -X GET -H "Content-Type: application/json"  'http://localhost:8080/user/1'
+    $ curl -X GET -H 'http://localhost:8080/user/1'
   
 will give the output:
 
