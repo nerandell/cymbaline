@@ -4,7 +4,7 @@ namespace Cymbaline;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-class DatabaseHelper
+class DatabaseHandler
 {
     static function setUp()
     {

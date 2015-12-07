@@ -9,7 +9,7 @@ require_once(ROOT . DS . 'app' . DS . 'config' . DS . 'database.php');
 require_once(ROOT . DS . 'app' . DS . 'routes.php');
 
 use Cymbaline\RouteFactory;
-use Cymbaline\DatabaseHelper;
+use Cymbaline\DatabaseHandler;
 use Klein\Klein;
 
 class Cymbaline
@@ -48,7 +48,7 @@ class Cymbaline
 
     static function initialize()
     {
-        DatabaseHelper::setUp();
+        DatabaseHandler::setUp();
         self::include_for_pattern('models');
         self::include_for_pattern('controllers');
         self::setRoutes();
