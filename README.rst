@@ -164,7 +164,7 @@ will give the output:
 
     {
     	"id": 1,
-    	"name": "Ankit",
+    	"name": "User1",
     	"created_at": "2015-12-06 03:47:59",
     	"updated_at": "2015-12-06 03:47:59"
     }
@@ -172,7 +172,7 @@ will give the output:
 However, it is entirely upto you to define which apis you want and 
 you can override the default behaviour.
 
-You can define your own routes too. Custom routes are defined in ``app/routes.php`` directory
+You can define your own routes too. Custom routes are defined in ``app/routes.php`` directory.
 Here is a sample route added. ``cymbaline`` uses Klein for routing and the routing options.
 
 
