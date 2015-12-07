@@ -6,7 +6,6 @@ use Cymbaline\Route;
 
 class CymbalineTest extends PHPUnit_Framework_TestCase
 {
-
     function testAddCustomRoute()
     {
         Route::addRoute('get', '/test_routes', function($val) {
