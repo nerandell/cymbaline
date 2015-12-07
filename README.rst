@@ -1,6 +1,8 @@
 cymbaline
 =========
-
+.. image:: https://api.travis-ci.org/nerandell/cymbaline.svg?branch=master
+    :target: https://travis-ci.org/nerandell/cymbaline
+|    
 `cymbaline` is yet another PHP web service framework. It follows MVC pattern 
 and makes development of web applications easy by including commonly used tasks
 in the framework itself to reduce effort and time taken for development.
