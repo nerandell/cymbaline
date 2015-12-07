@@ -99,8 +99,6 @@ by ``cymbaline``
 
 .. code-block:: python
 
-    <?php
-    
     use Cymbaline\BaseModel;
     
     class User extends BaseModel
@@ -138,8 +136,6 @@ Now define a controller named ``UserController`` directory like this:
 
 .. code-block:: python
 
-    <?php
-    
     use Cymbaline\Controller;
     
     class UserController extends Controller
@@ -195,8 +191,6 @@ Then add a method to the controller:
 
 .. code-block:: php
 
-    <?php
-    
     use Cymbaline\Controller;
     
     class UserController extends Controller
