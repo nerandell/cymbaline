@@ -1,5 +1,7 @@
 <?php
 
+namespace Cymbaline;
+
 class Route
 {
     private static $_routes = array();

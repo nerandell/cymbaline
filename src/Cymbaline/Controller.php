@@ -1,5 +1,9 @@
 <?php
 
+namespace Cymbaline;
+
+use Twig_Loader_Filesystem;
+use Twig_Environment;
 
 class Controller
 {
