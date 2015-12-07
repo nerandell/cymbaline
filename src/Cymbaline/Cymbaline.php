@@ -5,7 +5,6 @@ namespace Cymbaline;
 define('ROOT', dirname(dirname(dirname(dirname(dirname(dirname(__FILE__)))))));
 define('DS', '/');
 
-require_once(ROOT . DS . 'app' . DS . 'config' . DS . 'database.php');
 require_once(ROOT . DS . 'app' . DS . 'routes.php');
 
 use Cymbaline\RouteFactory;

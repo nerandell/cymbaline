@@ -8,7 +8,7 @@ class DatabaseHandler
 {
     static function setUp()
     {
-        global $connection;
+        require_once(ROOT . DS . 'app' . DS . 'config' . DS . 'database.php');
         $capsule = new Capsule;
         $capsule->addConnection($connection);
         $capsule->setAsGlobal();
